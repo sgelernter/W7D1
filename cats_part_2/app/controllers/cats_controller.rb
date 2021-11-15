@@ -43,12 +43,7 @@ class CatsController < ApplicationController
     end
   end
 
-  def is_not_owner
-    @cat = Cat.find(params[:id])
-    unless @cat.owner == current_user
-      redirect_to cats_url
-    end
-  end
+  
 
   private
 

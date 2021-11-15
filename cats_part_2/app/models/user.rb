@@ -9,6 +9,11 @@ class User < ApplicationRecord
     primary_key: :id, 
     foreign_key: :user_id 
 
+    has_many :requests,
+    class_name: :CatRentalRequest,
+    primary_key: :id,
+    foreign_key: :requester_id
+
     after_initialize :ensure_session_token
     attr_reader :password
 

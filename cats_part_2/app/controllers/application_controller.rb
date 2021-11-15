@@ -18,4 +18,11 @@ class ApplicationController < ActionController::Base
         redirect_to cats_url if logged_in?
     end
 
+    def is_not_owner
+        @cat = Cat.find(params[:id])
+        unless @cat.owner == current_user
+        redirect_to cats_url
+        end
+    end
+
 end
