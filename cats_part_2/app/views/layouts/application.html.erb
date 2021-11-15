@@ -11,7 +11,7 @@
   <body>
   <header>
     <% if logged_in? %>
-      <%= current_user.username %>
+      <h3>Current User: <%= current_user.username %></h3>
       <form action="<%=session_url%>" method="POST">
         <input type="hidden" name="_method" value="DELETE">
           <input type="submit" value="Log out">
